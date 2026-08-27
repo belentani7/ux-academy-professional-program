@@ -1,33 +1,18 @@
 import { useAuth } from "@/_core/hooks/useAuth";
-import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react";
-import { Streamdown } from 'streamdown';
+import { startLogin } from "@/const";
+import { useLocale } from "@/contexts/LocaleContext";
+import { ui } from "@/lib/i18n";
+import { ArrowDown, ArrowUpRight, BookOpen, CheckCircle2, Globe2, ShieldCheck, Sparkles } from "lucide-react";
+import { Link } from "wouter";
 
-/**
- * All content in this page are only for example, replace with your own feature implementation
- * When building pages, remember your instructions in Frontend Workflow, Frontend Best Practices, Design Guide and Common Pitfalls
- */
 export default function Home() {
-  // The useAuth hook provides authentication state.
-  // To implement login/logout, call logout(), or start login from an event
-  // handler: onClick={() => startLogin()} (imported from "@/const"). Never call
-  // startLogin() during render (no href={startLogin()}) — it mints a one-time
-  // nonce cookie and must run only at the moment of navigation.
-  let { user, loading, error, isAuthenticated, logout } = useAuth();
-
-  // If theme is switchable in App.tsx, we can implement theme toggling like this:
-  // const { theme, toggleTheme } = useTheme();
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <main>
-        {/* Example: lucide-react for icons */}
-        <Loader2 className="animate-spin" />
-        Example Page
-        {/* Example: Streamdown for markdown rendering */}
-        <Streamdown>Any **markdown** content</Streamdown>
-        <Button variant="default">Example Button</Button>
-      </main>
-    </div>
-  );
+  const { user } = useAuth();
+  const { locale, setLocale } = useLocale();
+  const copy = ui[locale];
+  const headline = locale === "es" ? "Aprende a diseñar decisiones que importan." : locale === "pt" ? "Aprenda a projetar decisões que importam." : "Learn to design decisions that matter.";
+  const description = locale === "es" ? "Un programa trilingüe, riguroso y práctico para evolucionar de fundamentos a Product Design profesional." : locale === "pt" ? "Um programa trilíngue, rigoroso e prático para evoluir de fundamentos a Product Design profissional." : "A trilingual, rigorous, practice-led program to move from fundamentals to professional Product Design.";
+  return <main className="min-h-screen overflow-hidden bg-[#f7f4ee] text-[#1d2822]"><header className="mx-auto flex max-w-[1440px] items-center justify-between px-5 py-5 md:px-10"><Link href="/" className="flex items-center gap-2.5"><span className="grid h-9 w-9 place-items-center rounded-xl bg-[#1d382d] text-[#f5e8d7]"><BookOpen size={18} /></span><span className="font-serif text-xl">UX Academy</span></Link><div className="flex items-center gap-3"><select aria-label="Language" value={locale} onChange={event => setLocale(event.target.value as "es" | "pt" | "en")} className="rounded-lg border border-[#d8d1c7] bg-white px-2 py-1.5 text-sm"><option value="es">ES</option><option value="pt">PT</option><option value="en">EN</option></select>{user ? <Link href="/dashboard" className="rounded-full bg-[#1d382d] px-4 py-2 text-sm font-medium text-white">{copy.dashboard}</Link> : <button onClick={() => startLogin()} className="rounded-full bg-[#1d382d] px-4 py-2 text-sm font-medium text-white">{copy.signIn}</button>}</div></header>
+    <section className="relative mx-auto grid max-w-[1440px] gap-10 px-5 pb-20 pt-12 md:grid-cols-[1.1fr_.9fr] md:px-10 md:pb-28 md:pt-20"><div className="relative z-10"><p className="mb-6 text-xs font-bold uppercase tracking-[0.22em] text-[#96724d]">UX / Product Design / 2026</p><h1 className="max-w-3xl font-serif text-5xl leading-[0.95] tracking-[-0.055em] sm:text-6xl lg:text-8xl">{headline}</h1><p className="mt-7 max-w-xl text-lg leading-8 text-[#5b665b]">{description}</p><div className="mt-9 flex flex-wrap gap-3"><button onClick={() => user ? location.assign("/dashboard") : startLogin()} className="inline-flex items-center gap-2 rounded-full bg-[#1d382d] px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-[#294a3b]">{user ? copy.continue : copy.signIn}<ArrowUpRight size={16} /></button><a href="#curriculum" className="inline-flex items-center gap-2 rounded-full border border-[#c9c1b6] bg-white/60 px-6 py-3.5 text-sm font-semibold text-[#334038]">{locale === "es" ? "Explorar programa" : locale === "pt" ? "Explorar programa" : "Explore program"}<ArrowDown size={16} /></a></div><p className="mt-6 flex items-center gap-2 text-xs text-[#667066]"><ShieldCheck size={15} className="text-[#2f6048]" />{locale === "es" ? "Certificate of Completion interno; no es una certificación oficial de Google." : locale === "pt" ? "Certificate of Completion interno; não é uma certificação oficial do Google." : "Internal Certificate of Completion; not an official Google certification."}</p></div><div className="relative min-h-[420px] rounded-[2rem] bg-[#1d382d] p-6 text-white shadow-[20px_24px_0_0_#ead8c1] md:min-h-[520px] md:p-9"><div className="absolute right-6 top-6 rounded-full border border-white/20 px-3 py-1 font-mono text-[10px] tracking-wider text-[#dfe9dc]">STUDIO VIEW</div><div className="mt-20 rounded-2xl border border-white/10 bg-white/8 p-5 backdrop-blur"><p className="text-xs font-bold uppercase tracking-[0.14em] text-[#c4d3c2]">Current practice</p><h2 className="mt-3 font-serif text-3xl leading-tight">{locale === "es" ? "De evidencia a oportunidad" : locale === "pt" ? "Da evidência à oportunidade" : "From evidence to opportunity"}</h2><div className="mt-6 grid grid-cols-3 gap-2"><div className="rounded-xl bg-white/10 p-3"><p className="font-mono text-[10px] text-[#c4d3c2]">01</p><p className="mt-2 text-xs">Research</p></div><div className="rounded-xl bg-[#c78f54] p-3 text-[#1d2822]"><p className="font-mono text-[10px] opacity-70">02</p><p className="mt-2 text-xs font-semibold">Define</p></div><div className="rounded-xl bg-white/10 p-3"><p className="font-mono text-[10px] text-[#c4d3c2]">03</p><p className="mt-2 text-xs">Prototype</p></div></div></div><div className="absolute bottom-7 left-7 right-7 flex items-center justify-between border-t border-white/15 pt-5 text-sm text-[#d5dfd2]"><span>17 modules · 5 portfolio cases</span><Sparkles size={18} className="text-[#d9b486]" /></div></div></section>
+    <section id="curriculum" className="border-y border-[#ded8cf] bg-[#fffdf9]"><div className="mx-auto grid max-w-[1440px] gap-px px-5 md:grid-cols-3 md:px-10"><div className="border-b border-[#e4ded4] py-8 md:border-b-0 md:border-r md:pr-10"><Globe2 className="text-[#96724d]" size={23} /><h2 className="mt-5 font-serif text-2xl">ES · PT · EN</h2><p className="mt-2 text-sm leading-6 text-[#637063]">{locale === "es" ? "Un mismo recorrido editorial en tres idiomas, con terminología coherente." : locale === "pt" ? "Um mesmo percurso editorial em três idiomas, com terminologia coerente." : "One editorial path in three languages with consistent terminology."}</p></div><div className="border-b border-[#e4ded4] py-8 md:border-b-0 md:border-r md:px-10"><CheckCircle2 className="text-[#96724d]" size={23} /><h2 className="mt-5 font-serif text-2xl">Practice before polish</h2><p className="mt-2 text-sm leading-6 text-[#637063]">{locale === "es" ? "Lecciones, laboratorios, rúbricas, proyectos y un capstone con evidencias." : locale === "pt" ? "Lições, laboratórios, rubricas, projetos e um capstone com evidências." : "Lessons, labs, rubrics, projects, and an evidence-based capstone."}</p></div><div className="py-8 md:pl-10"><BookOpen className="text-[#96724d]" size={23} /><h2 className="mt-5 font-serif text-2xl">Built for scrutiny</h2><p className="mt-2 text-sm leading-6 text-[#637063]">{locale === "es" ? "Investigación, accesibilidad, sistemas, IA responsable y comunicación profesional." : locale === "pt" ? "Pesquisa, acessibilidade, sistemas, IA responsável e comunicação profissional." : "Research, accessibility, systems, responsible AI, and professional communication."}</p></div></div></section>
+  </main>;
 }
