@@ -10,7 +10,7 @@ La plataforma se revisó en sus recorridos públicos y en los componentes proteg
 | Área | Resultado | Evidencia |
 |---|---|---|
 | Integridad de tipos | Conforme | `pnpm check` completado sin errores. |
-| Pruebas unitarias | Conforme | 4 archivos de prueba, 9 pruebas aprobadas. |
+| Pruebas unitarias | Conforme | 9 archivos de prueba, 22 pruebas aprobadas. |
 | Compilación de producción | Conforme | `pnpm build` completado; rutas privadas y dependencias separadas en paquetes diferidos. |
 | Curriculum | Conforme | 17 módulos, lecciones, objetivos, quizzes y material trilingüe validado. |
 | Accesibilidad visual | Conforme en revisión base | Foco visible, semántica de formularios, contraste institucional y estructura móvil comprobada. |

@@ -25,7 +25,7 @@ El proyecto utiliza React, TypeScript, Tailwind, Express, tRPC, Drizzle ORM y un
 ```text
 client/                  interfaz React, rutas y componentes
 server/                  procedimientos tRPC, mentoría, seguridad y datos
-drizze/                  esquema y migraciones de base de datos
+drizzle/                 esquema y migraciones de base de datos
 shared/                  currículo, evaluación y tipos compartidos
 shared/googleEcosystemContent.ts  catálogo trilingüe y fuentes atribuidas de la ruta complementaria
 materials/               plantillas de investigación, proyecto y portfolio

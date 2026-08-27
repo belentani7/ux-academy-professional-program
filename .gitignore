@@ -39,6 +39,9 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
+# Manus dev debug collector (browser console / network / session replay)
+.manus-logs/
+
 # Runtime data
 pids
 *.pid
