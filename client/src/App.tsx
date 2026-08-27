@@ -22,6 +22,7 @@ const Certificate = lazy(() => import("@/pages/Certificate"));
 const CapstoneReview = lazy(() => import("@/pages/CapstoneReview"));
 const Profile = lazy(() => import("@/pages/Profile"));
 const GoogleEcosystem = lazy(() => import("@/pages/GoogleEcosystem"));
+const GrowthHub = lazy(() => import("@/pages/GrowthHub"));
 
 const protectedPage = (Page: React.ComponentType) => () => <AcademyLayout><Suspense fallback={<div className="min-h-[40vh] animate-pulse rounded-3xl bg-[#ece6dc]" aria-label="Loading course area" />}><Page /></Suspense></AcademyLayout>;
 
@@ -37,6 +38,7 @@ function Router() {
     <Route path="/notes" component={protectedPage(Notes)} />
     <Route path="/resources" component={protectedPage(Resources)} />
     <Route path="/google-ecosystem" component={protectedPage(GoogleEcosystem)} />
+    <Route path="/growth" component={() => <Suspense fallback={<div className="min-h-[40vh] animate-pulse rounded-3xl bg-[#edf3ff]" aria-label="Loading Growth Studio" />}><GrowthHub /></Suspense>} />
     <Route path="/portfolio" component={protectedPage(Portfolio)} />
     <Route path="/certificate" component={protectedPage(Certificate)} />
     <Route path="/review" component={protectedPage(CapstoneReview)} />

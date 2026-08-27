@@ -171,10 +171,11 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (!id.includes("node_modules")) return undefined;
-          if (id.includes("react") || id.includes("wouter")) return "framework";
-          if (id.includes("@trpc") || id.includes("@tanstack")) return "data-client";
-          if (id.includes("lucide-react")) return "icons";
-          if (id.includes("@radix-ui") || id.includes("cmdk") || id.includes("vaul")) return "ui-primitives";
+          if (id.includes("/node_modules/gsap/") || id.includes("/node_modules/@gsap/")) return "motion";
+          if (id.includes("/node_modules/@radix-ui/") || id.includes("/node_modules/cmdk/") || id.includes("/node_modules/vaul/")) return "ui-primitives";
+          if (id.includes("/node_modules/@trpc/") || id.includes("/node_modules/@tanstack/")) return "data-client";
+          if (id.includes("/node_modules/lucide-react/")) return "icons";
+          if (id.includes("/node_modules/react/") || id.includes("/node_modules/react-dom/") || id.includes("/node_modules/wouter/")) return "framework";
           return "vendor";
         },
       },

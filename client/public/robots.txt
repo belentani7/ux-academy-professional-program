@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Disallow: /dashboard
+Disallow: /catalog
+Disallow: /module/
+Disallow: /learn/
+Disallow: /lab
+Disallow: /projects
+Disallow: /notes
+Disallow: /resources
+Disallow: /google-ecosystem
+Disallow: /portfolio
+Disallow: /certificate
+Disallow: /review
+Disallow: /profile
+
+# The authenticated classroom contains personal progress, notes, evidence, and internal review data.
+# Only the public homepage is intended for search discovery.

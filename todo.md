@@ -42,3 +42,19 @@
 - [x] Integrar catálogo, biblioteca filtrable y rutas complementarias de Google sin eliminar contenido existente.
 - [x] Añadir pruebas, auditoría y documentación de fuentes, licencias y mantenimiento de la ampliación.
 - [x] Sincronizar la ampliación validada con el repositorio privado de GitHub.
+- [x] Redactar y documentar un brief maestro de dirección visual, posicionamiento y contenido respetuoso de licencias.
+- [x] Investigar exhaustivamente recursos gratuitos y atribuidos de SEO, marketing, UX, IA, Workspace y audiovisual.
+- [x] Curar canales, playlists y perfiles educativos públicos sin copiar ni republicar material de terceros.
+- [x] Ampliar la matriz verificada por dominios con formato, acceso y condiciones de licencia de cada recurso.
+- [x] Curar de forma explícita materiales de Workspace e IA con fuentes, cursos y perfiles oficiales verificados.
+- [x] Validar y documentar la cobertura final del inventario de investigación antes de cerrar la fase.
+- [x] Crear una ruta trilingüe avanzada de SEO, marketing de Google, marca y distribución de contenido.
+- [x] Rediseñar la portada, navegación, biblioteca y páginas clave con una estética más distintiva y orientada a conversión.
+- [x] Integrar GSAP y animaciones accesibles de alto rendimiento con degradación para movimiento reducido.
+- [x] Implementar una biblioteca audiovisual filtrable y una experiencia de descubrimiento de contenidos.
+- [x] Mejorar el SEO técnico y la estrategia de posicionamiento orgánico de la plataforma.
+- [x] Añadir pruebas, auditoría visual responsive, accesibilidad y documentación de licencias de la nueva ampliación.
+- [x] Revisar y registrar visualmente Growth Studio en escritorio y móvil.
+- [x] Documentar los controles de navegación, foco, semántica y movimiento reducido de Growth Studio.
+- [x] Publicar Growth Studio como ruta de descubrimiento sin autenticación, preservando privadas las rutas de aprendizaje y datos personales.
+- [ ] Guardar y sincronizar la ampliación audiovisual y comercial con GitHub.

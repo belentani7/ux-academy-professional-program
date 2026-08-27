@@ -70,12 +70,25 @@ La auditoría funcional y responsive se encuentra en [`docs/QUALITY_AUDIT.md`](d
 | Migraciones | Modifique primero `drizzle/schema.ts`, genere una migración con Drizzle, revise el SQL y aplíquelo solo después de revisar sus efectos. No elimine tablas ni evidencias sin un plan de retención aprobado. |
 | Contenido y traducciones | Mantenga `shared/courseContent.ts` y `shared/assessmentContent.ts` como fuente editorial. Toda lección, pregunta y recurso nuevo debe incluir las tres variantes lingüísticas y pasar `pnpm test`. |
 | Ruta del ecosistema Google | Mantenga `shared/googleEcosystemContent.ts` y `docs/GOOGLE_ECOSYSTEM_RESEARCH.md` sincronizados. Todo enlace nuevo debe indicar si es documentación abierta reutilizable o solo un recurso público enlazado, además de conservar sus tres variantes lingüísticas. |
+| Growth Studio | Mantenga `shared/growthContent.ts`, `docs/GROWTH_RESEARCH.md` y la biblioteca audiovisual sincronizados. Toda fuente nueva debe conservar editor, URL, formato, nivel, tema, acceso y nota de uso; los vídeos externos se enlazan desde su origen y no se re-alojan. |
 | Referencias | Compruebe que las URLs de la biblioteca permanecen disponibles al menos una vez por cohorte. Actualice títulos, alcance y versión de los estándares cuando la fuente oficial cambie. |
 | Capstone | Un administrador revisa los ocho criterios, registra el nivel por dimensión, documenta la retroalimentación y fija la decisión. El nivel global se deriva del criterio más bajo; no lo sustituya por una autoevaluación. |
 | Certificados internos | Un administrador debe usar el control de validación y emisión solamente después de verificar el progreso, puntuación, examen, proyectos y capstone. El registro no debe presentarse como credencial de Google. |
 | Evidencias | Conserve solo archivos autorizados y necesarios. Si una evidencia debe dejar de estar disponible, retire su referencia de la base de datos de acuerdo con la política institucional; evite recopilar datos identificables de participantes. |
 
 Antes de cada actualización de entrega, ejecute `pnpm check && pnpm test && pnpm build`, revise los recorridos afectados en móvil y escritorio y actualice la auditoría de calidad con resultados verificables.
+
+## Growth Edition: estrategia, audiovisual y SEO
+
+Growth Studio amplía el curso sin sustituir el programa original de UX/Product Design. Está disponible como una superficie pública de descubrimiento en `/growth` e incluye cuatro rutas trilingües: **SEO y contenido útil**, **marketing y conversión responsables**, **marca audiovisual y distribución**, y **Research Ops con IA**. Cada ruta reúne cuatro lecciones originales, prácticas progresivas, un *portfolio brief*, entregable y rúbrica. La biblioteca audiovisual dispone de filtros por SEO, marketing, vídeo, Workspace, IA y UX, y proporciona enlaces externos con editorial, formato y contexto de uso.
+
+| Tipo de material | Tratamiento en la plataforma |
+|---|---|
+| Documentación de Google Developers | Se enlaza con nota de fuente y se revisa la licencia específica de cada página. La política general identifica CC BY 4.0 para contenido y Apache 2.0 para código, salvo un aviso diferente.[7] |
+| Canales, playlists, cursos y webinars públicos | Se enlazan desde el editor original con organización, formato, tema y contexto. El acceso público no se interpreta como autorización para copiar, descargar o re-subir. |
+| Materiales de UX Academy | Son contenido editorial propio y se mantienen de forma consistente en español, português e inglés. |
+
+La portada pública y Growth Studio cuentan con título, descripción, metadatos sociales, color de interfaz, manifest y reglas de rastreo. Las rutas autenticadas se excluyen de `robots.txt` para no exponer rutas de aprendizaje, notas, progreso, evidencias, revisión de capstone o certificado. Consulte la matriz de fuentes y condiciones en [`docs/GROWTH_RESEARCH.md`](docs/GROWTH_RESEARCH.md) y el brief rector de crecimiento, diseño y contenido en [`docs/MASTER_BUILD_PROMPT.md`](docs/MASTER_BUILD_PROMPT.md).
 
 ## Ruta complementaria: ecosistema Google
 
