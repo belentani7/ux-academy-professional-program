@@ -57,4 +57,4 @@
 - [x] Revisar y registrar visualmente Growth Studio en escritorio y móvil.
 - [x] Documentar los controles de navegación, foco, semántica y movimiento reducido de Growth Studio.
 - [x] Publicar Growth Studio como ruta de descubrimiento sin autenticación, preservando privadas las rutas de aprendizaje y datos personales.
-- [ ] Guardar y sincronizar la ampliación audiovisual y comercial con GitHub.
+- [x] Guardar y sincronizar la ampliación audiovisual y comercial con GitHub.
