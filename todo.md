@@ -41,4 +41,4 @@
 - [x] Crear rutas y materiales originales trilingües sobre herramientas y flujos del ecosistema Google.
 - [x] Integrar catálogo, biblioteca filtrable y rutas complementarias de Google sin eliminar contenido existente.
 - [x] Añadir pruebas, auditoría y documentación de fuentes, licencias y mantenimiento de la ampliación.
-- [ ] Sincronizar la ampliación validada con el repositorio privado de GitHub.
+- [x] Sincronizar la ampliación validada con el repositorio privado de GitHub.
