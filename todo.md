@@ -35,4 +35,4 @@
 - [x] Ampliar el README con mantenimiento operativo de migraciones, contenido, capstones, certificados y evidencias.
 - [x] Añadir pruebas de integración para los procedimientos de práctica y revelación por fases.
 - [x] Documentar auditorías reproducibles de los flujos de práctica, evidencia, capstone, certificado, accesibilidad y seguridad.
-- [ ] Crear y verificar un repositorio privado de GitHub con la entrega completa.
+- [x] Crear y verificar un repositorio privado de GitHub con la entrega completa.
