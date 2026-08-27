@@ -36,3 +36,9 @@
 - [x] Añadir pruebas de integración para los procedimientos de práctica y revelación por fases.
 - [x] Documentar auditorías reproducibles de los flujos de práctica, evidencia, capstone, certificado, accesibilidad y seguridad.
 - [x] Crear y verificar un repositorio privado de GitHub con la entrega completa.
+- [x] Definir la taxonomía, política de licencia y límites de atribución para la ampliación del ecosistema Google.
+- [x] Investigar y verificar recursos oficiales, educativos y de licencia abierta por dominio del ecosistema Google.
+- [x] Crear rutas y materiales originales trilingües sobre herramientas y flujos del ecosistema Google.
+- [x] Integrar catálogo, biblioteca filtrable y rutas complementarias de Google sin eliminar contenido existente.
+- [x] Añadir pruebas, auditoría y documentación de fuentes, licencias y mantenimiento de la ampliación.
+- [ ] Sincronizar la ampliación validada con el repositorio privado de GitHub.

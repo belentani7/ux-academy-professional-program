@@ -3,7 +3,7 @@ import { startLogin } from "@/const";
 import { useLocale } from "@/contexts/LocaleContext";
 import { ui } from "@/lib/i18n";
 import { trpc } from "@/lib/trpc";
-import { BookOpen, BriefcaseBusiness, ClipboardCheck, FileCheck2, FlaskConical, LayoutDashboard, Library, LogOut, Medal, NotebookPen, UserRound } from "lucide-react";
+import { BookOpen, BriefcaseBusiness, ClipboardCheck, FileCheck2, FlaskConical, LayoutDashboard, Library, LogOut, Medal, Network, NotebookPen, UserRound } from "lucide-react";
 import { useEffect } from "react";
 import { Link, useLocation } from "wouter";
 
@@ -14,6 +14,7 @@ const navItems = [
   { path: "/projects", icon: BriefcaseBusiness, key: "projects" },
   { path: "/notes", icon: NotebookPen, key: "notes" },
   { path: "/resources", icon: Library, key: "resources" },
+  { path: "/google-ecosystem", icon: Network, key: "google" },
   { path: "/portfolio", icon: FileCheck2, key: "portfolio" },
   { path: "/certificate", icon: Medal, key: "certificate" },
 ] as const;

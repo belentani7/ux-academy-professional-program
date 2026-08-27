@@ -16,6 +16,7 @@ UX Academy es una plataforma de aprendizaje **trilingüe (español, português e
 | Capstone | Entrega, adjuntos, matriz de ocho criterios, nivel derivado, decisión interna y emisión controlada del certificado. |
 | Evidencias | Enlaces HTTPS y adjuntos permitidos mediante almacenamiento externo, vinculados al propietario de la entrega. |
 | Recursos | Biblioteca de referencias oficiales, educativas y complementarias verificadas. |
+| Ecosistema Google | Ruta complementaria con 16 itinerarios, 48 unidades aplicadas y 32 referencias por herramientas, decisiones, prácticas y límites de uso. |
 
 ## Arquitectura
 
@@ -26,6 +27,7 @@ client/                  interfaz React, rutas y componentes
 server/                  procedimientos tRPC, mentoría, seguridad y datos
 drizze/                  esquema y migraciones de base de datos
 shared/                  currículo, evaluación y tipos compartidos
+shared/googleEcosystemContent.ts  catálogo trilingüe y fuentes atribuidas de la ruta complementaria
 materials/               plantillas de investigación, proyecto y portfolio
 docs/                    decisiones de producto, arquitectura y auditoría
 ```
@@ -67,12 +69,21 @@ La auditoría funcional y responsive se encuentra en [`docs/QUALITY_AUDIT.md`](d
 |---|---|
 | Migraciones | Modifique primero `drizzle/schema.ts`, genere una migración con Drizzle, revise el SQL y aplíquelo solo después de revisar sus efectos. No elimine tablas ni evidencias sin un plan de retención aprobado. |
 | Contenido y traducciones | Mantenga `shared/courseContent.ts` y `shared/assessmentContent.ts` como fuente editorial. Toda lección, pregunta y recurso nuevo debe incluir las tres variantes lingüísticas y pasar `pnpm test`. |
+| Ruta del ecosistema Google | Mantenga `shared/googleEcosystemContent.ts` y `docs/GOOGLE_ECOSYSTEM_RESEARCH.md` sincronizados. Todo enlace nuevo debe indicar si es documentación abierta reutilizable o solo un recurso público enlazado, además de conservar sus tres variantes lingüísticas. |
 | Referencias | Compruebe que las URLs de la biblioteca permanecen disponibles al menos una vez por cohorte. Actualice títulos, alcance y versión de los estándares cuando la fuente oficial cambie. |
 | Capstone | Un administrador revisa los ocho criterios, registra el nivel por dimensión, documenta la retroalimentación y fija la decisión. El nivel global se deriva del criterio más bajo; no lo sustituya por una autoevaluación. |
 | Certificados internos | Un administrador debe usar el control de validación y emisión solamente después de verificar el progreso, puntuación, examen, proyectos y capstone. El registro no debe presentarse como credencial de Google. |
 | Evidencias | Conserve solo archivos autorizados y necesarios. Si una evidencia debe dejar de estar disponible, retire su referencia de la base de datos de acuerdo con la política institucional; evite recopilar datos identificables de participantes. |
 
 Antes de cada actualización de entrega, ejecute `pnpm check && pnpm test && pnpm build`, revise los recorridos afectados en móvil y escritorio y actualice la auditoría de calidad con resultados verificables.
+
+## Ruta complementaria: ecosistema Google
+
+La ruta accesible desde **Biblioteca → Ecosistema Google** añade 16 itinerarios originales sobre seguridad de cuenta, colaboración y automatización Workspace, Chrome y web.dev, búsqueda, medición, marketing, YouTube, Android/Play, Firebase, Cloud, datos, Gemini, Maps/Earth Engine, TensorFlow y educación. Cada itinerario combina tres unidades aplicadas, un *studio brief*, un entregable, un límite de práctica y dos fuentes atribuidas. La vista distingue documentación que declara licencias abiertas de los recursos de acceso público que se enlazan sin copiarse.
+
+> **Límite de marca y acreditación:** esta ampliación no está afiliada, patrocinada ni certificada por Google. No concede certificaciones de Google, no incorpora logotipos de Google y no reproduce cursos, videos, laboratorios ni evaluaciones ajenas. Las referencias se presentan como rutas de aprendizaje complementarias y las condiciones del recurso concreto prevalecen.
+
+La investigación, fecha de comprobación, categorías, condiciones de reutilización y vínculos principales se documentan en [`docs/GOOGLE_ECOSYSTEM_RESEARCH.md`](docs/GOOGLE_ECOSYSTEM_RESEARCH.md). Las páginas de Google Developers normalmente identifican el contenido como CC BY 4.0 y sus ejemplos de código como Apache 2.0 salvo indicación contraria; la plataforma conserva esa distinción y exige una revisión por enlace antes de reutilizar material.[7]
 
 ## Referencias principales
 
@@ -84,6 +95,17 @@ El currículo emplea referencias como contexto y aprendizaje complementario; no 
 4. [Figma Help Center](https://help.figma.com/)
 5. [Nielsen Norman Group — Usability Testing 101](https://www.nngroup.com/articles/usability-testing-101/)
 6. [Design Council — Double Diamond](https://www.designcouncil.org.uk/resources/the-double-diamond/)
+7. [Google Developers — Site Policies](https://developers.google.com/terms/site-policies)
+8. [Google Developers — Products](https://developers.google.com/products)
+9. [Google Apps Script](https://developers.google.com/apps-script)
+10. [Chrome for Developers](https://developer.chrome.com/)
+11. [web.dev Learn](https://web.dev/learn/)
+12. [Firebase Documentation](https://firebase.google.com/docs)
+13. [Gemini API Documentation](https://ai.google.dev/gemini-api/docs)
+14. [Google Maps Platform Documentation](https://developers.google.com/maps/documentation)
+15. [Google Cloud BigQuery Documentation](https://cloud.google.com/bigquery/docs)
+16. [TensorFlow](https://www.tensorflow.org/)
+17. [Google for Education Learning Center](https://edu.google.com/intl/ALL_us/learning-center/)
 
 ## Licencia y uso
 

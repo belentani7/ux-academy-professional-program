@@ -19,6 +19,7 @@ La plataforma se revisó en sus recorridos públicos y en los componentes proteg
 | Certificado | Conforme como reconocimiento interno | Emisión controlada por administrador tras validar reglas del programa y revisión estructurada del capstone. |
 | Flujos críticos | Conforme en revisión de código y contratos | Practice Lab, evidencia, revisión de capstone y emisión se validan por procedimientos autenticados con controles de propiedad o rol. |
 | Rendimiento de paquete | Conforme | Áreas privadas con carga diferida y paquetes separados; el mayor paquete de framework queda por debajo del umbral de 500 kB sin advertencias de tamaño. |
+| Ruta del ecosistema Google | Conforme | 16 itinerarios, 48 unidades y 32 fuentes con estado de acceso, licencia o condición de enlace; se verificó en escritorio y móvil. |
 
 ## Hallazgos visuales
 
@@ -35,6 +36,8 @@ Las entregas de proyecto exigen un borrador antes de recibir evidencias. Los arc
 La revisión de capstone está aislada al rol de administrador. Captura ocho dimensiones: investigación, IA responsable, wireframes y flujos, UI, accesibilidad, testing, documentación y caso de portfolio. El nivel global deriva de la dimensión con menor nivel alcanzado, lo que evita compensar una brecha crítica con una puntuación alta en otro criterio.
 
 El flujo de certificado se valida en servidor: exige progreso curricular, puntuación de programa, examen final, cuatro proyectos y un capstone aprobado al nivel mínimo publicado. Los procedimientos de evidencia verifican tipo, tamaño y nombre de adjunto; los enlaces se limitan a HTTPS. La comprobación de producción separó las áreas privadas y dependencias de la portada, dejando el paquete de framework por debajo de 500 kB y sin advertencias de tamaño.
+
+La ampliación de Google conserva la navegación y contenido UX existentes. La ruta utiliza el selector global de idioma, filtra los dieciséis dominios y expone para cada uno objetivos, tres prácticas, brief, entregable, límite de práctica y recursos externos. La comprobación visual confirmó que el selector de dominios, las tarjetas de itinerario y el contenido de detalle se reordenan sin desbordamiento horizontal en un viewport de 390 px.
 
 ## Auditorías reproducibles de flujos críticos
 
