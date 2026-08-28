@@ -116,3 +116,6 @@ temp/
 client/public/__manus__/version.json
 .project-config.json
 .vercel
+
+# Local Netlify folder
+.netlify
