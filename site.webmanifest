@@ -1,0 +1,9 @@
+{
+  "name": "UX Academy — Growth Edition",
+  "short_name": "UX Academy",
+  "description": "A trilingual professional learning program for UX, Product Design, growth, and evidence-based practice.",
+  "lang": "es",
+  "display": "browser",
+  "background_color": "#fbfaf7",
+  "theme_color": "#1d45a5"
+}
