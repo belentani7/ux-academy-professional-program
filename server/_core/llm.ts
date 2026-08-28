@@ -62,6 +62,8 @@ export type InvokeParams = {
   tool_choice?: ToolChoice;
   maxTokens?: number;
   max_tokens?: number;
+  maxCompletionTokens?: number;
+  max_completion_tokens?: number;
   outputSchema?: OutputSchema;
   output_schema?: OutputSchema;
   responseFormat?: ResponseFormat;
@@ -356,6 +358,8 @@ export async function invokeLLM(params: InvokeParams): Promise<InvokeResult> {
     reasoning,
     maxTokens,
     max_tokens,
+    maxCompletionTokens,
+    max_completion_tokens,
   } = params;
 
   const payload: Record<string, unknown> = {
@@ -378,9 +382,18 @@ export async function invokeLLM(params: InvokeParams): Promise<InvokeResult> {
     payload.tool_choice = normalizedToolChoice;
   }
 
+  const resolvedMaxCompletionTokens = max_completion_tokens ?? maxCompletionTokens;
   const resolvedMaxTokens = max_tokens ?? maxTokens;
-  if (typeof resolvedMaxTokens === "number") {
-    payload.max_tokens = resolvedMaxTokens;
+  if (typeof resolvedMaxCompletionTokens === "number") {
+    payload.max_completion_tokens = resolvedMaxCompletionTokens;
+  } else if (typeof resolvedMaxTokens === "number") {
+    // GPT-5 consumes reasoning tokens before visible output; use the GPT
+    // parameter when the selected model belongs to that family.
+    if (typeof model === "string" && model.startsWith("gpt-5")) {
+      payload.max_completion_tokens = resolvedMaxTokens;
+    } else {
+      payload.max_tokens = resolvedMaxTokens;
+    }
   }
 
   if (thinking) {

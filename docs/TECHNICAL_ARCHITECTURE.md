@@ -10,7 +10,7 @@ Cada ítem editorial tendrá un identificador estable y tres campos equivalentes
 
 | Entidad | Finalidad | Datos principales | Propiedad y protección |
 |---|---|---|---|
-| `learning_profiles` | Preferencias y acumulados por estudiante | idioma, puntos, meta semanal, fecha de actualización | Una fila por usuario autenticado |
+| `learning_profiles` | Preferencias y acumulados por estudiante | idioma, puntos, meta semanal, fecha de actualización | Una fila por identidad anónima o usuario autenticado |
 | `lesson_progress` | Seguimiento de cada lección | lección, estado, tiempo, finalización | Único por usuario y lección |
 | `student_notes` | Notas privadas | lección opcional, título, contenido, marca temporal | Solo su autor puede consultar o editar |
 | `quiz_attempts` | Intentos evaluables | quiz, respuestas, nota, aprobado, fecha | Historial perteneciente al estudiante |
@@ -50,13 +50,19 @@ Los puntos derivan de acciones verificables: lecciones completadas, quizzes apro
 | Área | Lectura | Escritura | Control de acceso |
 |---|---|---|---|
 | Catálogo curricular | Programa, módulos, lecciones y recursos | No aplica desde la UI | Público; datos versionados |
-| Aprendizaje | Dashboard, progreso, próxima actividad | Completar lección, actualizar perfil | Usuario autenticado, siempre por `userId` del contexto |
+| Aprendizaje | Dashboard, progreso, próxima actividad | Completar lección, actualizar perfil | Identidad de sesión anónima o usuario OAuth, siempre por `userId` del contexto |
 | Evaluación | Quizzes y rúbricas | Registrar intento de quiz | Usuario autenticado; la corrección ocurre en servidor |
 | Notas | Notas propias | Crear, editar y eliminar notas propias | Usuario autenticado y propietario |
 | Proyectos | Briefs, entregas y portfolio propio | Guardar borrador, entregar, autoevaluar | Usuario autenticado y propietario |
 | Evidencias | Metadatos de la entrega propia | Subir archivo o guardar enlace | Usuario autenticado y propietario de la entrega |
-| Practice Lab | Casos y orientaciones propias | Registrar intento y solicitar nivel de ayuda | Usuario autenticado y propietario |
+| Mentoría | Casos y orientaciones propias | Registrar intento y solicitar nivel de ayuda | Identidad de sesión anónima o usuario OAuth y propietario |
 | Certificado | Elegibilidad y registro propio | Emitir solo tras validación del servidor | Usuario autenticado; reglas no manipulables por cliente |
+
+## Identidad anónima, IA y voz
+
+El acceso al aula no depende de OAuth. Cuando una petición llega sin una sesión válida, el servidor genera un `openId` con 32 bytes aleatorios, crea o actualiza la fila correspondiente en `users` con `loginMethod: anonymous` y emite un JWT firmado en una cookie HttpOnly con duración de un año. La interfaz muestra una versión truncada del identificador y permite copiarlo para conservar una referencia manual; la cookie sigue siendo el mecanismo de continuidad. OAuth permanece disponible como vía explícita para operaciones administrativas, pero no se presenta como requisito para estudiar.
+
+El asistente global ofrece mentoría contextual y reescritura de textos mediante el modelo de servidor `gpt-5-mini`; las credenciales nunca se envían al navegador. La entrada de voz y la lectura en voz alta usan las APIs nativas del navegador, de forma que el alumno conserva control de iniciar, detener y repetir la reproducción. El texto sigue siendo la fuente principal y los vídeos externos se enlazan desde su editor original.
 
 ## Evidencias y carga segura
 

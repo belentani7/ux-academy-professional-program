@@ -15,12 +15,14 @@ UX Academy es una plataforma de aprendizaje **trilingüe (español, português e
 | Evaluación | Quizzes por módulo, examen final, cuatro proyectos progresivos y capstone integrador. |
 | Capstone | Entrega, adjuntos, matriz de ocho criterios, nivel derivado, decisión interna y emisión controlada del certificado. |
 | Evidencias | Enlaces HTTPS y adjuntos permitidos mediante almacenamiento externo, vinculados al propietario de la entrega. |
-| Recursos | Biblioteca de referencias oficiales, educativas y complementarias verificadas. |
+| Recursos | Biblioteca de referencias oficiales, educativas y complementarias verificadas, con canales, playlists y vídeos de YouTube enlazados desde su fuente. |
+| Acceso | Aula abierta sin login obligatorio; cada navegador recibe una identidad anónima aleatoria, firmada y persistente por cookie. |
+| IA y voz | Mentor contextual y mejora de textos en el servidor; dictado, lectura de la página y lectura de respuestas mediante capacidades del navegador. |
 | Ecosistema Google | Ruta complementaria con 16 itinerarios, 48 unidades aplicadas y 32 referencias por herramientas, decisiones, prácticas y límites de uso. |
 
 ## Arquitectura
 
-El proyecto utiliza React, TypeScript, Tailwind, Express, tRPC, Drizzle ORM y una base de datos relacional. La autenticación está integrada mediante OAuth. Todas las mutaciones de progreso, notas, evaluación, mentoría, evidencias y certificado se realizan a través de procedimientos autenticados.
+El proyecto utiliza React, TypeScript, Tailwind, Express, tRPC, Drizzle ORM y una base de datos relacional. El OAuth se conserva como acceso opcional para operaciones administrativas; el aula no exige login. El servidor crea una identidad anónima con 256 bits de entropía, la materializa como usuario de la base de datos y emite una cookie de sesión HttpOnly firmada durante un año. Todas las mutaciones de progreso, notas, evaluación, mentoría, evidencias y certificado siguen pasando por procedimientos autenticados, pero la autenticación del alumno se obtiene automáticamente sin formulario de registro.
 
 ```text
 client/                  interfaz React, rutas y componentes

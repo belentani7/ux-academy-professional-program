@@ -23,6 +23,7 @@ import {
 } from "./db";
 import { storeEvidenceFile } from "./evidence";
 import { generateFormativeFeedback } from "./mentor";
+import { answerLearner, improveLearnerText } from "./ai";
 import { COOKIE_NAME } from "../shared/const";
 import { getSessionCookieOptions } from "./_core/cookies";
 import { systemRouter } from "./_core/systemRouter";
@@ -47,6 +48,10 @@ export const appRouter = router({
   course: router({
     catalog: publicProcedure.query(() => ({ modules: courseModules, resources: resourceLibrary, rubrics, certificateRules, finalExam })),
     practiceCases: publicProcedure.query(() => practiceCases),
+  }),
+  ai: router({
+    ask: protectedProcedure.input(z.object({ question: z.string().trim().min(2).max(4000), locale: localeSchema, page: z.string().trim().min(1).max(120) })).mutation(({ input }) => answerLearner(input)),
+    rewrite: protectedProcedure.input(z.object({ text: z.string().trim().min(2).max(12000), locale: localeSchema, purpose: z.string().trim().min(2).max(240) })).mutation(({ input }) => improveLearnerText(input)),
   }),
   learning: router({
     dashboard: protectedProcedure.query(({ ctx }) => getLearningDashboard(ctx.user.id)),

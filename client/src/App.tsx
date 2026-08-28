@@ -1,5 +1,6 @@
 import { Toaster } from "@/components/ui/sonner";
 import AcademyLayout from "@/components/AcademyLayout";
+import CourseAssistant from "@/components/CourseAssistant";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { LocaleProvider } from "@/contexts/LocaleContext";
 import Home from "@/pages/Home";
@@ -48,5 +49,6 @@ function Router() {
 }
 
 export default function App() {
-  return <ErrorBoundary><ThemeProvider defaultTheme="light"><LocaleProvider><TooltipProvider><Toaster /><Router /></TooltipProvider></LocaleProvider></ThemeProvider></ErrorBoundary>;
+  return <ErrorBoundary><ThemeProvider defaultTheme="light"><LocaleProvider><TooltipProvider>          <Toaster /><Router /><CourseAssistant />
+</TooltipProvider></LocaleProvider></ThemeProvider></ErrorBoundary>;
 }
