@@ -50,8 +50,8 @@ export const appRouter = router({
     practiceCases: publicProcedure.query(() => practiceCases),
   }),
   ai: router({
-    ask: protectedProcedure.input(z.object({ question: z.string().trim().min(2).max(4000), locale: localeSchema, page: z.string().trim().min(1).max(120) })).mutation(({ input }) => answerLearner(input)),
-    rewrite: protectedProcedure.input(z.object({ text: z.string().trim().min(2).max(12000), locale: localeSchema, purpose: z.string().trim().min(2).max(240) })).mutation(({ input }) => improveLearnerText(input)),
+    ask: publicProcedure.input(z.object({ question: z.string().trim().min(2).max(4000), locale: localeSchema, page: z.string().trim().min(1).max(120) })).mutation(({ input }) => answerLearner(input)),
+    rewrite: publicProcedure.input(z.object({ text: z.string().trim().min(2).max(12000), locale: localeSchema, purpose: z.string().trim().min(2).max(240) })).mutation(({ input }) => improveLearnerText(input)),
   }),
   learning: router({
     dashboard: protectedProcedure.query(({ ctx }) => getLearningDashboard(ctx.user.id)),
