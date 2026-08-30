@@ -37,6 +37,7 @@ export default function CourseAssistant() {
   const [speaking, setSpeaking] = useState(false);
   const [voiceNotice, setVoiceNotice] = useState("");
   const recognitionRef = useRef<SpeechRecognitionLike | null>(null);
+  const panelRef = useRef<HTMLElement | null>(null);
   const askMutation = trpc.ai.ask.useMutation();
   const rewriteMutation = trpc.ai.rewrite.useMutation();
 
@@ -109,6 +110,16 @@ export default function CourseAssistant() {
     if (typeof window !== "undefined") window.speechSynthesis?.cancel();
   }, []);
 
+  useEffect(() => {
+    if (!open) return;
+    panelRef.current?.querySelector<HTMLTextAreaElement>("textarea")?.focus();
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   const speak = (text: string) => {
     if (typeof window === "undefined" || !text.trim() || !window.speechSynthesis) return;
     window.speechSynthesis.cancel();
@@ -180,20 +191,19 @@ export default function CourseAssistant() {
 
   return <>
     <button type="button" onClick={() => setOpen(value => !value)} aria-expanded={open} aria-label={copy.button} className="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-[#1d45a5] px-4 py-3 text-sm font-bold text-white shadow-[0_12px_30px_-10px_rgba(29,69,165,.75)] transition hover:-translate-y-0.5 hover:bg-[#173b90] active:scale-[.97]">
-      <Sparkles size={16} />{copy.button}
+      <Sparkles size={16} aria-hidden="true" />{copy.button}
     </button>
-    {open && <aside aria-label={copy.title} className="fixed bottom-[4.8rem] right-5 z-50 flex max-h-[min(720px,calc(100vh-6.5rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[1.5rem] border border-[#cdd8f0] bg-[#fbfaf7] text-[#1b2445] shadow-[0_24px_70px_-18px_rgba(22,35,74,.45)]">
+    {open && <aside ref={panelRef} role="dialog" aria-modal="false" aria-labelledby="assistant-title" aria-label={copy.title} className="fixed bottom-[4.8rem] right-5 z-50 flex max-h-[min(720px,calc(100vh-6.5rem))] w-[min(390px,calc(100vw-2rem))] flex-col overflow-hidden rounded-[1.5rem] border border-[#cdd8f0] bg-[#fbfaf7] text-[#1b2445] shadow-[0_24px_70px_-18px_rgba(22,35,74,.45)]">
       <header className="flex items-start justify-between gap-3 bg-[#1d45a5] px-5 py-4 text-white">
-        <div><p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[.15em] text-[#cbd8ff]"><Sparkles size={14}/>{copy.ready}</p><h2 className="mt-1 font-serif text-2xl">{copy.title}</h2><p className="mt-1 text-xs leading-5 text-[#dce5ff]">{copy.intro}</p></div>
-        <button type="button" onClick={() => setOpen(false)} className="rounded-lg p-1.5 text-[#dce5ff] hover:bg-white/10" aria-label="Close"><X size={18}/></button>
+        <div><p className="flex items-center gap-2 text-xs font-bold uppercase tracking-[.15em] text-[#cbd8ff]"><Sparkles size={14} aria-hidden="true" />{copy.ready}</p><h2 id="assistant-title" className="mt-1 font-serif text-2xl">{copy.title}</h2><p className="mt-1 text-xs leading-5 text-[#dce5ff]">{copy.intro}</p></div>
+        <button type="button" onClick={() => setOpen(false)} className="rounded-lg p-1.5 text-[#dce5ff] hover:bg-white/10" aria-label={locale === "es" ? "Cerrar mentor IA" : locale === "pt" ? "Fechar mentor IA" : "Close AI mentor"}><X size={18} aria-hidden="true" /></button>
       </header>
       <div className="space-y-4 overflow-y-auto p-4">
-        {answer && <section className="rounded-2xl border border-[#d8e1f4] bg-white p-4"><p className="whitespace-pre-wrap text-sm leading-6 text-[#3e4b70]">{answer}</p><div className="mt-3 flex flex-wrap gap-2"><button type="button" onClick={() => speaking ? (window.speechSynthesis?.cancel(), setSpeaking(false)) : speak(answer)} className="inline-flex items-center gap-1.5 rounded-lg bg-[#edf2ff] px-2.5 py-1.5 text-xs font-bold text-[#3155a7]">{speaking ? <Square size={13}/> : <Volume2 size={13}/>} {speaking ? copy.stop : copy.read}</button></div></section>}
-        <div className="relative"><textarea value={question} onChange={event => setQuestion(event.target.value)} onKeyDown={event => { if ((event.metaKey || event.ctrlKey) && event.key === "Enter") ask(); }} placeholder={copy.placeholder} rows={3} className="w-full resize-none rounded-2xl border border-[#d5deef] bg-white px-3.5 py-3 pr-11 text-sm leading-6 outline-none transition focus:border-[#4b70c8] focus:ring-2 focus:ring-[#dfe7fb]"/><button type="button" onClick={startDictation} aria-label={copy.mic} className={`absolute bottom-3 right-3 rounded-lg p-1.5 ${listening ? "bg-[#ffd264] text-[#1d45a5]" : "text-[#68779c] hover:bg-[#edf2ff] hover:text-[#3155a7]"}`}><Mic size={16}/></button></div>
-        {voiceNotice && <p className="text-xs text-[#9b4b36]">{voiceNotice}</p>}
-        {listening && <p className="text-xs font-semibold text-[#3155a7]">{copy.listening}</p>}
+        {answer && <section aria-live="polite" className="rounded-2xl border border-[#d8e1f4] bg-white p-4"><p className="whitespace-pre-wrap text-sm leading-6 text-[#3e4b70]">{answer}</p><div className="mt-3 flex flex-wrap gap-2"><button type="button" onClick={() => speaking ? (window.speechSynthesis?.cancel(), setSpeaking(false)) : speak(answer)} className="inline-flex items-center gap-1.5 rounded-lg bg-[#edf2ff] px-2.5 py-1.5 text-xs font-bold text-[#3155a7]">{speaking ? <Square size={13} aria-hidden="true"/> : <Volume2 size={13} aria-hidden="true"/>} {speaking ? copy.stop : copy.read}</button></div></section>}
+        <div className="relative"><label htmlFor="assistant-question" className="sr-only">{copy.placeholder}</label><textarea id="assistant-question" value={question} onChange={event => setQuestion(event.target.value)} onKeyDown={event => { if ((event.metaKey || event.ctrlKey) && event.key === "Enter") ask(); }} placeholder={copy.placeholder} aria-describedby="assistant-voice-status" rows={3} className="w-full resize-none rounded-2xl border border-[#d5deef] bg-white px-3.5 py-3 pr-11 text-sm leading-6 outline-none transition focus:border-[#4b70c8] focus:ring-2 focus:ring-[#dfe7fb]"/><button type="button" onClick={startDictation} aria-label={copy.mic} className={`absolute bottom-3 right-3 rounded-lg p-1.5 ${listening ? "bg-[#ffd264] text-[#1d45a5]" : "text-[#68779c] hover:bg-[#edf2ff] hover:text-[#3155a7]"}`}><Mic size={16} aria-hidden="true" /></button></div>
+        <div id="assistant-voice-status" aria-live="polite">{voiceNotice && <p className="text-xs text-[#9b4b36]" role="status">{voiceNotice}</p>}{listening && <p className="text-xs font-semibold text-[#3155a7]" role="status">{copy.listening}</p>}</div>
         <div className="flex flex-wrap gap-2"><button type="button" onClick={ask} disabled={!question.trim() || askMutation.isPending} className="inline-flex items-center gap-2 rounded-xl bg-[#1d45a5] px-3.5 py-2.5 text-xs font-bold text-white disabled:cursor-not-allowed disabled:opacity-50">{askMutation.isPending ? <Loader2 size={14} className="animate-spin"/> : <Send size={14}/>} {copy.ask}</button><button type="button" onClick={readCurrentPage} className="inline-flex items-center gap-1.5 rounded-xl border border-[#d5deef] bg-white px-3.5 py-2.5 text-xs font-bold text-[#3155a7]"><Volume2 size={14}/>{copy.readPage}</button></div>
-        <section className="border-t border-[#e1e5ef] pt-4"><p className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[.13em] text-[#69779a]"><WandSparkles size={14}/>{copy.writing}</p><textarea value={writingDraft} onChange={event => setWritingDraft(event.target.value)} placeholder={copy.writingPlaceholder} rows={4} className="w-full resize-none rounded-2xl border border-[#d5deef] bg-white px-3.5 py-3 text-sm leading-6 outline-none transition focus:border-[#4b70c8] focus:ring-2 focus:ring-[#dfe7fb]"/><button type="button" onClick={improveWriting} disabled={!writingDraft.trim() || rewriteMutation.isPending} className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#f4b7df] px-3.5 py-2.5 text-xs font-bold text-[#58224d] disabled:cursor-not-allowed disabled:opacity-50">{rewriteMutation.isPending ? <Loader2 size={14} className="animate-spin"/> : <WandSparkles size={14}/>} {copy.rewrite}</button>{rewrittenText && <div className="mt-3 rounded-2xl border border-[#f0c4e1] bg-[#fff7fc] p-3"><p className="whitespace-pre-wrap text-sm leading-6 text-[#5b3157]">{rewrittenText}</p><button type="button" onClick={() => setWritingDraft(rewrittenText)} className="mt-2 text-xs font-bold text-[#8d3d7b] underline underline-offset-2">{copy.use}</button></div>}</section>
+        <section className="border-t border-[#e1e5ef] pt-4"><p id="writing-lab-title" className="mb-2 flex items-center gap-2 text-xs font-bold uppercase tracking-[.13em] text-[#69779a]"><WandSparkles size={14} aria-hidden="true"/>{copy.writing}</p><label htmlFor="assistant-writing" className="sr-only">{copy.writingPlaceholder}</label><textarea id="assistant-writing" aria-describedby="writing-lab-title" value={writingDraft} onChange={event => setWritingDraft(event.target.value)} placeholder={copy.writingPlaceholder} rows={4} className="w-full resize-none rounded-2xl border border-[#d5deef] bg-white px-3.5 py-3 text-sm leading-6 outline-none transition focus:border-[#4b70c8] focus:ring-2 focus:ring-[#dfe7fb]"/><button type="button" onClick={improveWriting} disabled={!writingDraft.trim() || rewriteMutation.isPending} className="mt-2 inline-flex items-center gap-2 rounded-xl bg-[#f4b7df] px-3.5 py-2.5 text-xs font-bold text-[#58224d] disabled:cursor-not-allowed disabled:opacity-50">{rewriteMutation.isPending ? <Loader2 size={14} className="animate-spin" aria-hidden="true"/> : <WandSparkles size={14} aria-hidden="true"/>} {copy.rewrite}</button>{rewrittenText && <div role="status" aria-live="polite" className="mt-3 rounded-2xl border border-[#f0c4e1] bg-[#fff7fc] p-3"><p className="whitespace-pre-wrap text-sm leading-6 text-[#5b3157]">{rewrittenText}</p><button type="button" onClick={() => setWritingDraft(rewrittenText)} className="mt-2 text-xs font-bold text-[#8d3d7b] underline underline-offset-2">{copy.use}</button></div>}</section>
       </div>
     </aside>}
   </>;

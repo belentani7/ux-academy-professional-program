@@ -7,3 +7,7 @@ La portada en `http://localhost:3000/` muestra los CTA **Comenzar** y **Comenzar
 La ruta `/dashboard` carga el layout del aula sin mostrar una pantalla de login. En el entorno local no hay `DATABASE_URL`, por lo que el servidor no puede materializar un usuario anónimo persistente y el dashboard muestra un estado vacío; la navegación y la biblioteca pública siguen disponibles. En el despliegue con base de datos administrada, `createContext` crea la identidad anónima y emite la cookie firmada.
 
 La ruta `/growth` muestra **35 fuentes y canales**, los filtros temáticos y las nuevas tarjetas para NNGroup, W3C WAI, Figma, Femke.design, VAexperience, UX Salon y Caler Edwards. Se conservan los enlaces a las fuentes originales y el aviso de que UX Academy no descarga ni republica vídeos.
+
+## Auditoría de teclado
+
+Tras los cambios de accesibilidad, la portada local (`http://localhost:3000/`) muestra el enlace **Saltar al contenido principal** como primer elemento enfocable con `Tab`; el foco tiene un anillo visible y el enlace apunta al contenido principal. El CTA **Comenzar sin registro** ahora es un enlace real a `/dashboard`, por lo que conserva una ruta funcional sin JavaScript.
