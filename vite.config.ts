@@ -6,8 +6,11 @@ import { defineConfig } from "vite";
 
 const plugins = [react(), tailwindcss(), jsxLocPlugin()];
 
+const base = process.env.GITHUB_PAGES ? "/ux-academy-professional-program/" : "/";
+
 export default defineConfig({
   plugins,
+  base,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
@@ -19,15 +22,8 @@ export default defineConfig({
   root: path.resolve(import.meta.dirname, "client"),
   publicDir: path.resolve(import.meta.dirname, "client", "public"),
   build: {
-    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    outDir: path.resolve(import.meta.dirname, "docs"),
     emptyOutDir: true,
-  },
-  server: {
-    host: true,
-    allowedHosts: ["localhost", "127.0.0.1"],
-    fs: {
-      strict: true,
-      deny: ["**/.*"],
-    },
+    assetsDir: "assets",
   },
 });

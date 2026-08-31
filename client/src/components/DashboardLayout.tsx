@@ -21,16 +21,68 @@ import {
 } from "@/components/ui/sidebar";
 import { startLogin } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
-import { LayoutDashboard, LogOut, PanelLeft, Users } from "lucide-react";
+import { LayoutDashboard, BookOpen, GraduationCap, FlaskConical, FolderKanban, FileText, Briefcase, Award, User, LogOut, PanelLeft, Globe, Youtube } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import { useLocation } from "wouter";
+import { useLocation, useNavigate } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
+import { useLocale } from "@/contexts/LocaleContext";
 
 const menuItems = [
-  { icon: LayoutDashboard, label: "Page 1", path: "/" },
-  { icon: Users, label: "Page 2", path: "/some-path" },
+  { icon: LayoutDashboard, labelKey: "dashboard", path: "/dashboard" },
+  { icon: BookOpen, labelKey: "catalog", path: "/catalog" },
+  { icon: GraduationCap, labelKey: "googleEcosystem", path: "/google-ecosystem" },
+  { icon: Youtube, labelKey: "youtubeCourses", path: "/youtube-courses" },
+  { icon: FlaskConical, labelKey: "practiceLab", path: "/lab" },
+  { icon: FolderKanban, labelKey: "projects", path: "/projects" },
+  { icon: FileText, labelKey: "notes", path: "/notes" },
+  { icon: Globe, labelKey: "resources", path: "/resources" },
+  { icon: Briefcase, labelKey: "portfolio", path: "/portfolio" },
+  { icon: Award, labelKey: "certificate", path: "/certificate" },
+  { icon: User, labelKey: "profile", path: "/profile" },
 ];
+
+const uiLabels = {
+  es: {
+    dashboard: "Panel",
+    catalog: "Catálogo",
+    googleEcosystem: "Ecosistema Google",
+    youtubeCourses: "Cursos YouTube",
+    practiceLab: "Laboratorio",
+    projects: "Proyectos",
+    notes: "Notas",
+    resources: "Recursos",
+    portfolio: "Portfolio",
+    certificate: "Certificados",
+    profile: "Perfil",
+  },
+  pt: {
+    dashboard: "Painel",
+    catalog: "Catálogo",
+    googleEcosystem: "Ecossistema Google",
+    youtubeCourses: "Cursos YouTube",
+    practiceLab: "Laboratório",
+    projects: "Projetos",
+    notes: "Notas",
+    resources: "Recursos",
+    portfolio: "Portfólio",
+    certificate: "Certificados",
+    profile: "Perfil",
+  },
+  en: {
+    dashboard: "Dashboard",
+    catalog: "Catalog",
+    googleEcosystem: "Google Ecosystem",
+    youtubeCourses: "YouTube Courses",
+    practiceLab: "Practice Lab",
+    projects: "Projects",
+    notes: "Notes",
+    resources: "Resources",
+    portfolio: "Portfolio",
+    certificate: "Certificates",
+    profile: "Profile",
+  },
+};
 
 const SIDEBAR_WIDTH_KEY = "sidebar-width";
 const DEFAULT_WIDTH = 280;
@@ -47,6 +99,8 @@ export default function DashboardLayout({
     return saved ? parseInt(saved, 10) : DEFAULT_WIDTH;
   });
   const { loading, user } = useAuth();
+  const { locale } = useLocale();
+  const labels = uiLabels[locale];
 
   useEffect(() => {
     localStorage.setItem(SIDEBAR_WIDTH_KEY, sidebarWidth.toString());
@@ -88,7 +142,7 @@ export default function DashboardLayout({
         } as CSSProperties
       }
     >
-      <DashboardLayoutContent setSidebarWidth={setSidebarWidth}>
+      <DashboardLayoutContent setSidebarWidth={setSidebarWidth} labels={labels}>
         {children}
       </DashboardLayoutContent>
     </SidebarProvider>
@@ -98,14 +152,17 @@ export default function DashboardLayout({
 type DashboardLayoutContentProps = {
   children: React.ReactNode;
   setSidebarWidth: (width: number) => void;
+  labels: typeof uiLabels.es;
 };
 
 function DashboardLayoutContent({
   children,
   setSidebarWidth,
+  labels,
 }: DashboardLayoutContentProps) {
   const { user, logout } = useAuth();
   const [location, setLocation] = useLocation();
+  const navigate = useNavigate();
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
   const [isResizing, setIsResizing] = useState(false);
@@ -184,14 +241,14 @@ function DashboardLayoutContent({
                   <SidebarMenuItem key={item.path}>
                     <SidebarMenuButton
                       isActive={isActive}
-                      onClick={() => setLocation(item.path)}
-                      tooltip={item.label}
+                      onClick={() => { setLocation(item.path); navigate(item.path); }}
+                      tooltip={labels[item.labelKey]}
                       className={`h-10 transition-all font-normal`}
                     >
                       <item.icon
                         className={`h-4 w-4 ${isActive ? "text-primary" : ""}`}
                       />
-                      <span>{item.label}</span>
+                      <span>{labels[item.labelKey]}</span>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 );
