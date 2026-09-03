@@ -2,7 +2,7 @@
   "name": "ux-academy-trilingual",
   "version": "1.0.0",
   "type": "module",
-  "license": "MIT",
+  "license": "AGPL-3.0-only",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
