@@ -1,0 +1,116 @@
+{
+  "tema": "iconografia",
+  "portal": "ux-academy",
+  "registros": [
+    {
+      "fuente": "Lucide",
+      "spec": "lucide:arrow",
+      "ok": true,
+      "datos": [
+        {
+          "icono": "a-arrow-down",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/a-arrow-down.svg"
+        },
+        {
+          "icono": "a-arrow-up",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/a-arrow-up.svg"
+        },
+        {
+          "icono": "arrow-big-down-dash",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-down-dash.svg"
+        },
+        {
+          "icono": "arrow-big-down",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-down.svg"
+        },
+        {
+          "icono": "arrow-big-left-dash",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-left-dash.svg"
+        },
+        {
+          "icono": "arrow-big-left",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-left.svg"
+        },
+        {
+          "icono": "arrow-big-right-dash",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-right-dash.svg"
+        },
+        {
+          "icono": "arrow-big-right",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-right.svg"
+        },
+        {
+          "icono": "arrow-big-up-dash",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-up-dash.svg"
+        },
+        {
+          "icono": "arrow-big-up",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-big-up.svg"
+        },
+        {
+          "icono": "arrow-down-0-1",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-0-1.svg"
+        },
+        {
+          "icono": "arrow-down-1-0",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-1-0.svg"
+        },
+        {
+          "icono": "arrow-down-a-z",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-a-z.svg"
+        },
+        {
+          "icono": "arrow-down-from-line",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-from-line.svg"
+        },
+        {
+          "icono": "arrow-down-left",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-left.svg"
+        },
+        {
+          "icono": "arrow-down-narrow-wide",
+          "svg": "https://unpkg.com/lucide-static@latest/icons/arrow-down-narrow-wide.svg"
+        }
+      ]
+    },
+    {
+      "fuente": "Iconify",
+      "spec": "iconify:user",
+      "ok": true,
+      "datos": [
+        "mdi:user",
+        "mdi:user-outline",
+        "solar:user-bold",
+        "solar:user-bold-duotone",
+        "solar:user-broken",
+        "solar:user-line-duotone",
+        "solar:user-linear",
+        "solar:user-outline",
+        "tabler:user",
+        "tabler:user-filled",
+        "iconmind:user-duotone-bold",
+        "iconmind:user-duotone-regular",
+        "iconmind:user-duotone-thin",
+        "iconmind:user-outline-bold",
+        "iconmind:user-outline-regular",
+        "iconmind:user-outline-thin",
+        "boxicons:user",
+        "boxicons:user-filled",
+        "keyline-icons:user",
+        "keyline-icons:user-duotone",
+        "keyline-icons:user-fill",
+        "keyline-icons:user-sharp",
+        "keyline-icons:user-sharp-duotone",
+        "keyline-icons:user-sharp-fill",
+        "ri:user-fill",
+        "ri:user-line",
+        "mynaui:user",
+        "mynaui:user-solid",
+        "griddy-icons:user",
+        "griddy-icons:user-filled",
+        "iconoir:user",
+        "lucide:user"
+      ]
+    }
+  ]
+}
