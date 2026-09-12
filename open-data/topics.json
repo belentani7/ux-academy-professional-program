@@ -1,0 +1,72 @@
+{
+  "portal": "ux-academy",
+  "repo": "belentani7/ux-academy-professional-program",
+  "dominio": "UX, producto y diseno",
+  "generado_utc": "2026-09-12T21:24:46+00:00",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "fuentes": [
+    {
+      "tema": "iconografia",
+      "fuente": "Lucide",
+      "spec": "lucide:arrow",
+      "ok": true
+    },
+    {
+      "tema": "iconografia",
+      "fuente": "Iconify",
+      "spec": "iconify:user",
+      "ok": true
+    },
+    {
+      "tema": "color-y-accesibilidad",
+      "fuente": "Open Color",
+      "spec": "open_color",
+      "ok": true
+    },
+    {
+      "tema": "tokens-de-diseno",
+      "fuente": "Tailwind tokens",
+      "spec": "tokens",
+      "ok": true
+    },
+    {
+      "tema": "referencias-visuales",
+      "fuente": "Met Museum",
+      "spec": "met:poster",
+      "ok": true
+    },
+    {
+      "tema": "referencias-visuales",
+      "fuente": "Openverse",
+      "spec": "openverse:design",
+      "ok": true
+    }
+  ],
+  "temas": [
+    {
+      "tema": "iconografia",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "color-y-accesibilidad",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    },
+    {
+      "tema": "tokens-de-diseno",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    },
+    {
+      "tema": "referencias-visuales",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "portal": "ux-academy",
+  "dominio": "UX, producto y diseno",
+  "orden_idiomas": [
+    "pt",
+    "es",
+    "en",
+    "ca"
+  ],
+  "generado_utc": "2026-09-12T21:59:08+00:00",
+  "motor": "edge-tts (voces neuronales, sin API key)",
+  "idiomas": {
+    "pt": {
+      "voz": "pt-BR-FranciscaNeural",
+      "guion": "Bem-vindo ao portal de referência ux-academy. Domínio: UX, producto y diseno. Reúne 4 temas construídos a partir de 6 fontes de dados abertos verificadas: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
+      "archivo": "voces/pt/bienvenida.mp3",
+      "bytes": 133488,
+      "sha256": "9f02111fb43b79423a26bf0029de07ce43e0f95d0848d99404598ed5d95a6b40"
+    },
+    "es": {
+      "voz": "es-ES-ElviraNeural",
+      "guion": "Bienvenido al portal de referencia ux-academy. Dominio: UX, producto y diseno. Reúne 4 temas construidos a partir de 6 fuentes de datos abiertos verificadas: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Todo gratuito, sin credenciales, y funciona sin conexión.",
+      "archivo": "voces/es/bienvenida.mp3",
+      "bytes": 130752,
+      "sha256": "1c193fd0f1889ccbf8912123a5bbe6e12f3690d20251606266c7eddc5eaede27"
+    },
+    "en": {
+      "voz": "en-US-AriaNeural",
+      "guion": "Welcome to the ux-academy reference portal. Domain: UX, producto y diseno. It brings together 4 topics built from 6 verified open data sources: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. All free, no credentials, and it works offline.",
+      "archivo": "voces/en/bienvenida.mp3",
+      "bytes": 131472,
+      "sha256": "8bec3ba760571f5285f76028f9e44e7a9c36f4dcf2ce52af716977fbcd91c855"
+    },
+    "ca": {
+      "voz": "ca-ES-JoanaNeural",
+      "guion": "Benvingut al portal de referència ux-academy. Domini: UX, producto y diseno. Aplega 4 temes construïts a partir de 6 fonts de dades obertes verificades: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Tot gratuït, sense credencials, i funciona sense connexió.",
+      "archivo": "voces/ca/bienvenida.mp3",
+      "bytes": 164304,
+      "sha256": "25cbdd790a161486a8fbda96629549f3879c5bfaece1cfea0f8911feedb0e5cf"
+    }
+  }
+}
