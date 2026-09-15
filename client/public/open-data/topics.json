@@ -2,7 +2,7 @@
   "portal": "ux-academy",
   "repo": "belentani7/ux-academy-professional-program",
   "dominio": "UX, producto y diseno",
-  "generado_utc": "2026-09-12T21:24:46+00:00",
+  "generado_utc": "2026-09-15T14:35:06+00:00",
   "orden_idiomas": [
     "pt",
     "es",
@@ -45,6 +45,24 @@
       "fuente": "Openverse",
       "spec": "openverse:design",
       "ok": true
+    },
+    {
+      "tema": "tipografia",
+      "fuente": "Google Fonts",
+      "spec": "google_fonts:roboto",
+      "ok": true
+    },
+    {
+      "tema": "arte-y-museos",
+      "fuente": "Art Institute",
+      "spec": "artic:poster",
+      "ok": true
+    },
+    {
+      "tema": "arte-y-museos",
+      "fuente": "Met Museum",
+      "spec": "met:painting",
+      "ok": true
     }
   ],
   "temas": [
@@ -65,6 +83,16 @@
     },
     {
       "tema": "referencias-visuales",
+      "fuentes_ok": 2,
+      "fuentes_total": 2
+    },
+    {
+      "tema": "tipografia",
+      "fuentes_ok": 1,
+      "fuentes_total": 1
+    },
+    {
+      "tema": "arte-y-museos",
       "fuentes_ok": 2,
       "fuentes_total": 2
     }

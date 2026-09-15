@@ -1,0 +1,74 @@
+{
+  "tema": "arte-y-museos",
+  "portal": "ux-academy",
+  "registros": [
+    {
+      "fuente": "Art Institute",
+      "spec": "artic:poster",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Buy a Little Present for the Kaiser",
+          "autor": "Unknown Artist (American, 20th century)",
+          "url": "https://www.artic.edu/artworks/7962",
+          "imagen": "https://www.artic.edu/iiif/2/59320f53-e6a1-4fb7-0246-ff70542460bf/full/400,/0/default.jpg"
+        },
+        {
+          "titulo": "La Gismonda (Sarah Bernhardt)",
+          "autor": "Alphonse Marie Mucha (Czech, 1860-1939)",
+          "url": "https://www.artic.edu/artworks/10429",
+          "imagen": null
+        },
+        {
+          "titulo": "Zodiaque (\"La Plume\")",
+          "autor": "Alphonse Marie Mucha",
+          "url": "https://www.artic.edu/artworks/111986",
+          "imagen": "https://www.artic.edu/iiif/2/119dba14-acf2-cdcd-e9e6-b9cd38bc3aad/full/400,/0/default.jpg"
+        },
+        {
+          "titulo": "To the Amputees—Join the Workforce",
+          "autor": "Unknown Artist",
+          "url": "https://www.artic.edu/artworks/7933",
+          "imagen": "https://www.artic.edu/iiif/2/01e6ed5b-5b03-3929-f424-96e4bcbbec31/full/400,/0/default.jpg"
+        },
+        {
+          "titulo": "1952 Exhibition Poster",
+          "autor": "Pablo Picasso (Spanish, 1881-1973)",
+          "url": "https://www.artic.edu/artworks/122394",
+          "imagen": "https://www.artic.edu/iiif/2/40d361de-3296-7ed1-a6a9-f592457864b0/full/400,/0/default.jpg"
+        }
+      ]
+    },
+    {
+      "fuente": "Met Museum",
+      "spec": "met:painting",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Tommaso di Folco Portinari (1428–1501); Maria Portinari (Maria Maddalena Baroncelli, born 1456)",
+          "autor": "Hans Memling",
+          "imagen": "https://images.metmuseum.org/CRDImages/ep/web-large/DP-44362-005.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/437056"
+        },
+        {
+          "titulo": "Our Lady of Valvanera",
+          "autor": "Unknown",
+          "imagen": "https://images.metmuseum.org/CRDImages/ad/web-large/DP-17034-002.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/764091"
+        },
+        {
+          "titulo": "Orchids and Rocks",
+          "autor": "Yi Ha-eung",
+          "imagen": "https://images.metmuseum.org/CRDImages/as/web-large/DP-44394-002.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/929079"
+        },
+        {
+          "titulo": "Camille Monet (1847–1879) on a Garden Bench",
+          "autor": "Claude Monet",
+          "imagen": "",
+          "url": "https://www.metmuseum.org/art/collection/search/438003"
+        }
+      ]
+    }
+  ]
+}
