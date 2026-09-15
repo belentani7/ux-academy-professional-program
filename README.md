@@ -125,3 +125,19 @@ El currículo emplea referencias como contexto y aprendizaje complementario; no 
 ## Licencia y uso
 
 El contenido original de esta entrega se ofrece como base educativa del proyecto. Quien opere una cohorte debe revisar sus obligaciones locales sobre privacidad, accesibilidad, protección de datos, propiedad intelectual y acreditación antes de ofrecerla comercialmente.
+
+## Datos abiertos
+
+El directorio [open-data/](open-data/) ya trae un portal de datos abiertos
+(temas, fuentes y licencias en open-data/topics.json). Se regenera con
+`python enrich_portals.py <portal>` en el proyecto `edu-open-data`.
+
+Ver [open-data/README.md](open-data/README.md).
+
+## Proyectos open similares
+
+- [Open edX](https://github.com/openedx/openedx-platform)
+- [Moodle](https://github.com/moodle/moodle)
+- [Kolibri](https://github.com/learningequality/kolibri)
+- [Oppia](https://github.com/oppia/oppia)
+- [Sugar Labs](https://github.com/sugarlabs)
