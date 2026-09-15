@@ -12,31 +12,32 @@
   "idiomas": {
     "pt": {
       "voz": "pt-BR-FranciscaNeural",
-      "guion": "Bem-vindo ao portal de referência ux-academy. Domínio: UX, producto y diseno. Reúne 4 temas construídos a partir de 6 fontes de dados abertos verificadas: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
+      "guion": "Bem-vindo ao portal de referência ux-academy. Domínio: UX, produto e design. Reúne 4 temas construídos a partir de 6 fontes de dados abertos verificadas: iconografia, cor e acessibilidade, tokens de design, referências visuais. Tudo gratuito, sem credenciais, e funciona sem ligação à Internet.",
       "archivo": "voces/pt/bienvenida.mp3",
-      "bytes": 133488,
-      "sha256": "9f02111fb43b79423a26bf0029de07ce43e0f95d0848d99404598ed5d95a6b40"
+      "bytes": 128016,
+      "sha256": "2af24561da6877703d4089d1301fc7b4fa12fe17e31888cf7bcc06142307230e"
     },
     "es": {
       "voz": "es-ES-ElviraNeural",
-      "guion": "Bienvenido al portal de referencia ux-academy. Dominio: UX, producto y diseno. Reúne 4 temas construidos a partir de 6 fuentes de datos abiertos verificadas: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Todo gratuito, sin credenciales, y funciona sin conexión.",
+      "guion": "Bienvenido al portal de referencia ux-academy. Dominio: UX, producto y diseño. Reúne 4 temas construidos a partir de 6 fuentes de datos abiertos verificadas: iconografía, color y accesibilidad, tokens de diseño, referencias visuales. Todo gratuito, sin credenciales, y funciona sin conexión.",
       "archivo": "voces/es/bienvenida.mp3",
       "bytes": 130752,
-      "sha256": "1c193fd0f1889ccbf8912123a5bbe6e12f3690d20251606266c7eddc5eaede27"
+      "sha256": "fc6e494fc55cc9396b2b074614fdf92e73f3e6f7ce89ad15ebc58bc4fd149cff"
     },
     "en": {
       "voz": "en-US-AriaNeural",
-      "guion": "Welcome to the ux-academy reference portal. Domain: UX, producto y diseno. It brings together 4 topics built from 6 verified open data sources: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. All free, no credentials, and it works offline.",
+      "guion": "Welcome to the ux-academy reference portal. Domain: UX, product and design. It brings together 4 topics built from 6 verified open data sources: iconography, color and accessibility, design tokens, visual references. All free, no credentials, and it works offline.",
       "archivo": "voces/en/bienvenida.mp3",
-      "bytes": 131472,
-      "sha256": "8bec3ba760571f5285f76028f9e44e7a9c36f4dcf2ce52af716977fbcd91c855"
+      "bytes": 126864,
+      "sha256": "ee1973dca9c37018f1fe0196e0b0d85cc73e2e6772491878393a1571913bd4ab"
     },
     "ca": {
       "voz": "ca-ES-JoanaNeural",
-      "guion": "Benvingut al portal de referència ux-academy. Domini: UX, producto y diseno. Aplega 4 temes construïts a partir de 6 fonts de dades obertes verificades: iconografia, color y accesibilidad, tokens de diseno, referencias visuales. Tot gratuït, sense credencials, i funciona sense connexió.",
+      "guion": "Benvingut al portal de referència ux-academy. Domini: UX, producte i disseny. Aplega 4 temes construïts a partir de 6 fonts de dades obertes verificades: iconografia, color i accessibilitat, tokens de disseny, referències visuals. Tot gratuït, sense credencials, i funciona sense connexió.",
       "archivo": "voces/ca/bienvenida.mp3",
-      "bytes": 164304,
-      "sha256": "25cbdd790a161486a8fbda96629549f3879c5bfaece1cfea0f8911feedb0e5cf"
+      "bytes": 158976,
+      "sha256": "db0d3598d3e8e13bf65213ca9ae3b6a90d54c20a19161164448285ac6225995e"
     }
-  }
+  },
+  "nota_correccion": "2026-09-15: guiones PT/EN/CA contenian dominio y temas en espanol; traducidos a cada idioma (con tildes) y audio regenerado."
 }
