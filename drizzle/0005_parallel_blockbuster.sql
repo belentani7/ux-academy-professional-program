@@ -1,1 +1,0 @@
-ALTER TABLE `capstone_reviews` ADD `criteria` json NOT NULL;

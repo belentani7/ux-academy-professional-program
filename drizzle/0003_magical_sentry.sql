@@ -1,2 +1,0 @@
-ALTER TABLE `practice_attempts` ADD `moduleId` varchar(64) DEFAULT 'foundations' NOT NULL;--> statement-breakpoint
-CREATE INDEX `practice_attempts_user_module_idx` ON `practice_attempts` (`userId`,`moduleId`);
