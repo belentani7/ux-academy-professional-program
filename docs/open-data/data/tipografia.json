@@ -1,0 +1,43 @@
+{
+  "tema": "tipografia",
+  "portal": "ux-academy",
+  "registros": [
+    {
+      "fuente": "Google Fonts",
+      "spec": "google_fonts:roboto",
+      "ok": true,
+      "datos": [
+        {
+          "familia": "Roboto",
+          "categoria": "Sans Serif",
+          "pesos": null
+        },
+        {
+          "familia": "Roboto Condensed",
+          "categoria": "Sans Serif",
+          "pesos": null
+        },
+        {
+          "familia": "Roboto Flex",
+          "categoria": "Sans Serif",
+          "pesos": null
+        },
+        {
+          "familia": "Roboto Mono",
+          "categoria": "Monospace",
+          "pesos": null
+        },
+        {
+          "familia": "Roboto Serif",
+          "categoria": "Serif",
+          "pesos": null
+        },
+        {
+          "familia": "Roboto Slab",
+          "categoria": "Serif",
+          "pesos": null
+        }
+      ]
+    }
+  ]
+}

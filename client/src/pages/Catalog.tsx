@@ -1,7 +1,7 @@
 import { ModuleCard, PageHeading } from "@/components/AcademyUI";
 import { useLocale } from "@/contexts/LocaleContext";
 import { courseModules } from "@shared/courseContent";
-import { useStaticData } from "@/lib/staticData";
+import { quizPercent, useStaticData } from "@/lib/staticData";
 import { useMemo } from "react";
 
 export default function Catalog() {
@@ -29,7 +29,7 @@ export default function Catalog() {
             module={module}
             locale={locale}
             progress={lookup(module.id)}
-            score={dashboard.latestQuizByModule[module.id]}
+            score={quizPercent(dashboard.latestQuizByModule[module.id])}
           />
         ))}
       </div>

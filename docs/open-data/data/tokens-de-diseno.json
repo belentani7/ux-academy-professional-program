@@ -1,0 +1,103 @@
+{
+  "tema": "tokens-de-diseno",
+  "portal": "ux-academy",
+  "registros": [
+    {
+      "fuente": "Tailwind tokens",
+      "spec": "tokens",
+      "ok": true,
+      "datos": [
+        {
+          "variable": "--font-sans"
+        },
+        {
+          "variable": "--font-serif"
+        },
+        {
+          "variable": "--font-mono"
+        },
+        {
+          "variable": "--color-red-50"
+        },
+        {
+          "variable": "--color-red-100"
+        },
+        {
+          "variable": "--color-red-200"
+        },
+        {
+          "variable": "--color-red-300"
+        },
+        {
+          "variable": "--color-red-400"
+        },
+        {
+          "variable": "--color-red-500"
+        },
+        {
+          "variable": "--color-red-600"
+        },
+        {
+          "variable": "--color-red-700"
+        },
+        {
+          "variable": "--color-red-800"
+        },
+        {
+          "variable": "--color-red-900"
+        },
+        {
+          "variable": "--color-red-950"
+        },
+        {
+          "variable": "--color-orange-50"
+        },
+        {
+          "variable": "--color-orange-100"
+        },
+        {
+          "variable": "--color-orange-200"
+        },
+        {
+          "variable": "--color-orange-300"
+        },
+        {
+          "variable": "--color-orange-400"
+        },
+        {
+          "variable": "--color-orange-500"
+        },
+        {
+          "variable": "--color-orange-600"
+        },
+        {
+          "variable": "--color-orange-700"
+        },
+        {
+          "variable": "--color-orange-800"
+        },
+        {
+          "variable": "--color-orange-900"
+        },
+        {
+          "variable": "--color-orange-950"
+        },
+        {
+          "variable": "--color-amber-50"
+        },
+        {
+          "variable": "--color-amber-100"
+        },
+        {
+          "variable": "--color-amber-200"
+        },
+        {
+          "variable": "--color-amber-300"
+        },
+        {
+          "variable": "--color-amber-400"
+        }
+      ]
+    }
+  ]
+}

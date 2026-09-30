@@ -1,0 +1,80 @@
+{
+  "tema": "referencias-visuales",
+  "portal": "ux-academy",
+  "registros": [
+    {
+      "fuente": "Met Museum",
+      "spec": "met:poster",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "AIDSGATE",
+          "autor": "Silence = Death Project",
+          "imagen": "",
+          "url": "https://www.metmuseum.org/art/collection/search/497874"
+        },
+        {
+          "titulo": "Book of the Dead of the Priest of Horus, Imhotep (Imuthes)",
+          "autor": "-",
+          "imagen": "https://images.metmuseum.org/CRDImages/eg/web-large/2-35.9.20a–w_EGDP014589-4594.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/551786"
+        },
+        {
+          "titulo": "In proof of true love, a watercarrier skeleton arguing with a woman (Posada); two skeleton angels in upper corners (Manilla)",
+          "autor": "José Guadalupe Posada",
+          "imagen": "https://images.metmuseum.org/CRDImages/dp/web-large/DP865112.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/729644"
+        },
+        {
+          "titulo": "The Fieschi Morgan Staurotheke",
+          "autor": "-",
+          "imagen": "https://images.metmuseum.org/CRDImages/md/web-large/DT119.jpg",
+          "url": "https://www.metmuseum.org/art/collection/search/472562"
+        }
+      ]
+    },
+    {
+      "fuente": "Openverse",
+      "spec": "openverse:design",
+      "ok": true,
+      "datos": [
+        {
+          "titulo": "Design Is About Everything",
+          "licencia": "by-nc-sa",
+          "url": "https://live.staticflickr.com/90/244180342_7698fd2d52_b.jpg",
+          "origen": "https://www.flickr.com/photos/97048049@N00/244180342"
+        },
+        {
+          "titulo": "design",
+          "licencia": "by-nc-sa",
+          "url": "https://live.staticflickr.com/43/123917624_5b4d9756e9.jpg",
+          "origen": "https://www.flickr.com/photos/92444564@N00/123917624"
+        },
+        {
+          "titulo": "design",
+          "licencia": "by",
+          "url": "https://live.staticflickr.com/2257/2393761220_96689efafe_b.jpg",
+          "origen": "https://www.flickr.com/photos/22939124@N08/2393761220"
+        },
+        {
+          "titulo": "Graphic Design HfG/Karlsruhe",
+          "licencia": "by-nc-nd",
+          "url": "https://live.staticflickr.com/3433/3355949243_bc0b2ced4e.jpg",
+          "origen": "https://www.flickr.com/photos/20745656@N00/3355949243"
+        },
+        {
+          "titulo": "design is …",
+          "licencia": "by",
+          "url": "https://live.staticflickr.com/2078/2265291597_c197f7be13_b.jpg",
+          "origen": "https://www.flickr.com/photos/26859286@N00/2265291597"
+        },
+        {
+          "titulo": "1st logo design review",
+          "licencia": "by-nc-sa",
+          "url": "https://live.staticflickr.com/3019/2928566807_3ff87e8287.jpg",
+          "origen": "https://www.flickr.com/photos/26427185@N07/2928566807"
+        }
+      ]
+    }
+  ]
+}

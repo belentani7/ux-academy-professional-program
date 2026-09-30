@@ -23,7 +23,7 @@ import { startLogin } from "@/const";
 import { useIsMobile } from "@/hooks/useMobile";
 import { LayoutDashboard, BookOpen, GraduationCap, FlaskConical, FolderKanban, FileText, Briefcase, Award, User, LogOut, PanelLeft, Globe, Youtube } from "lucide-react";
 import { CSSProperties, useEffect, useRef, useState } from "react";
-import { useLocation, useNavigate } from "wouter";
+import { useLocation } from "wouter";
 import { DashboardLayoutSkeleton } from './DashboardLayoutSkeleton';
 import { Button } from "./ui/button";
 import { useLocale } from "@/contexts/LocaleContext";
@@ -40,7 +40,7 @@ const menuItems = [
   { icon: Briefcase, labelKey: "portfolio", path: "/portfolio" },
   { icon: Award, labelKey: "certificate", path: "/certificate" },
   { icon: User, labelKey: "profile", path: "/profile" },
-];
+] as const;
 
 const uiLabels = {
   es: {
@@ -162,7 +162,6 @@ function DashboardLayoutContent({
 }: DashboardLayoutContentProps) {
   const { user, logout } = useAuth();
   const [location, setLocation] = useLocation();
-  const navigate = useNavigate();
   const { state, toggleSidebar } = useSidebar();
   const isCollapsed = state === "collapsed";
   const [isResizing, setIsResizing] = useState(false);
@@ -241,7 +240,7 @@ function DashboardLayoutContent({
                   <SidebarMenuItem key={item.path}>
                     <SidebarMenuButton
                       isActive={isActive}
-                      onClick={() => { setLocation(item.path); navigate(item.path); }}
+                      onClick={() => setLocation(item.path)}
                       tooltip={labels[item.labelKey]}
                       className={`h-10 transition-all font-normal`}
                     >
@@ -305,7 +304,7 @@ function DashboardLayoutContent({
               <div className="flex items-center gap-3">
                 <div className="flex flex-col gap-1">
                   <span className="tracking-tight text-foreground">
-                    {activeMenuItem?.label ?? "Menu"}
+                    {activeMenuItem ? labels[activeMenuItem.labelKey] : "Menu"}
                   </span>
                 </div>
               </div>

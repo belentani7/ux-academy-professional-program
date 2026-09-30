@@ -2,7 +2,7 @@ import { EmptyNotice, ModuleCard, PageHeading, ProgressMeter, Tag } from "@/comp
 import { useLocale } from "@/contexts/LocaleContext";
 import { text, ui } from "@/lib/i18n";
 import { courseModules } from "@shared/courseContent";
-import { useStaticData } from "@/lib/staticData";
+import { quizPercent, useStaticData } from "@/lib/staticData";
 import { ArrowUpRight, Award, BookOpen, Check, Clock3, Target } from "lucide-react";
 import { Link } from "wouter";
 import { useMemo } from "react";
@@ -99,7 +99,7 @@ export default function Dashboard() {
               module={module}
               locale={locale}
               progress={moduleProgress(module.id)}
-              score={dashboard.latestQuizByModule[module.id]}
+              score={quizPercent(dashboard.latestQuizByModule[module.id])}
             />
           ))}
         </div>
