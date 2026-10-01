@@ -1,0 +1,121 @@
+[
+  {
+    "abrev": "UI",
+    "curso": "ux-academy",
+    "nombre": "User Interface",
+    "significado": "Interfaz de usuario: lo que se ve y se toca.",
+    "categoria": "TÉRMINOS FUNDAMENTALES"
+  },
+  {
+    "abrev": "UX",
+    "curso": "ux-academy",
+    "nombre": "User Experience",
+    "significado": "Experiencia de usuario: percepción completa al usar el producto.",
+    "categoria": "TÉRMINOS FUNDAMENTALES"
+  },
+  {
+    "abrev": "Design",
+    "curso": "ux-academy",
+    "nombre": "Design",
+    "significado": "Diseño: decisiones visuales y funcionales.",
+    "categoria": "TÉRMINOS FUNDAMENTALES"
+  },
+  {
+    "abrev": "User Story",
+    "curso": "ux-academy",
+    "nombre": "User Story",
+    "significado": "Historia de usuario en formato Como/Quiero/Para.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Epic",
+    "curso": "ux-academy",
+    "nombre": "Epic",
+    "significado": "Épica: agrupación grande de historias de usuario.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Feature",
+    "curso": "ux-academy",
+    "nombre": "Feature",
+    "significado": "Característica o funcionalidad entregable.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "POC",
+    "curso": "ux-academy",
+    "nombre": "Proof of Concept",
+    "significado": "Prueba de concepto.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Prototype",
+    "curso": "ux-academy",
+    "nombre": "Prototype",
+    "significado": "Prototipo navegable, desechable o evolutivo.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Mockup",
+    "curso": "ux-academy",
+    "nombre": "Mockup",
+    "significado": "Maqueta visual de alta fidelidad sin interacción.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Wireframe",
+    "curso": "ux-academy",
+    "nombre": "Wireframe",
+    "significado": "Boceto estructural sin estilo visual.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Roadmap",
+    "curso": "ux-academy",
+    "nombre": "Roadmap",
+    "significado": "Hoja de ruta temporal del producto.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "Backlog",
+    "curso": "ux-academy",
+    "nombre": "Backlog",
+    "significado": "Lista priorizada de trabajo pendiente.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "OKR",
+    "curso": "ux-academy",
+    "nombre": "Objectives and Key Results",
+    "significado": "Objetivos y resultados clave medibles.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "KPI",
+    "curso": "ux-academy",
+    "nombre": "Key Performance Indicator",
+    "significado": "Indicador clave de rendimiento.",
+    "categoria": "DOCUMENTOS DE PRODUCTO"
+  },
+  {
+    "abrev": "IxD",
+    "curso": "ux-academy",
+    "nombre": "Interaction Design",
+    "significado": "Diseño de la interacción.",
+    "categoria": "DOCUMENTOS TÉCNICOS"
+  },
+  {
+    "abrev": "IA",
+    "curso": "ux-academy",
+    "nombre": "Information Architecture",
+    "significado": "Arquitectura de la información (no confundir con inteligencia artificial).",
+    "categoria": "DOCUMENTOS TÉCNICOS"
+  },
+  {
+    "abrev": "Prototype",
+    "curso": "ux-academy",
+    "nombre": "Prototype",
+    "significado": "Crear objetos clonando un prototipo.",
+    "categoria": "PATRONES DE DISEÑO"
+  }
+]
